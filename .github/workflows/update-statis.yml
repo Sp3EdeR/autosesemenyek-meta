@@ -1,0 +1,24 @@
+# This action builds and deploys website updates to the release branch.
+# 
+
+name: Update Statistics
+concurrency: build-${{ github.ref }}
+on:
+  schedule:
+    - cron: '1 * * * *' # Every once in a while (for CodeQL security checks mainly)
+  workflow_dispatch:      # Manual execution
+permissions:
+  contents: write
+jobs:
+  deploy-website:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build the website
+        uses: ./.github/actions/update-stats
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          clean-exclude: pr/
+          folder: .
