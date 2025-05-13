@@ -9,4 +9,4 @@ runs:
       shell: bash
       run: |
           sudo pip install icalendar==6.2.0
-          python ".github/scripts/update-stats.py" "https://calendar.google.com/calendar/ical/84f10243ff538fc77d98689681022f21ce54839ddc590d28ecef719de5b0138b%40group.calendar.google.com/public/basic.ics" "stats.json"
+          python ".github/scripts/update-stats.py" "https://calendar.google.com/calendar/ical/toyotaesemenyek%40gmail.com/public/basic.ics" "stats.json"
