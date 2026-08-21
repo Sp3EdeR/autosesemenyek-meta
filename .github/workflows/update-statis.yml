@@ -4,8 +4,8 @@
 name: Update Statistics
 concurrency: build-${{ github.ref }}
 on:
-  schedule:
-    - cron: '1 * * * *' # Every once in a while (for CodeQL security checks mainly)
+  #schedule:
+  #  - cron: '1 * * * *' # Every once in a while (for CodeQL security checks mainly)
   workflow_dispatch:      # Manual execution
 permissions:
   contents: write
